@@ -1,0 +1,1133 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Permanent+Marker&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 150px 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-row: 1;
+  background-color: #f1fdf1;
+  padding: 2rem;
+  height: 150px;
+}
+header.dark {
+  filter: brightness(70%);
+}
+header.big__header {
+  display: none;
+}
+header.small__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header.small__header .app__title__wrapper {
+  position: relative;
+}
+header.small__header .app__title__wrapper h1 {
+  font-family: "Permanent Marker", cursive;
+  margin-left: 3rem;
+  transition: all 0.5s ease;
+}
+header.small__header .app__title__wrapper h1.translate {
+  transform: translateX(0.3rem);
+}
+header.small__header .app__title__wrapper h2 {
+  font-size: 1rem;
+}
+header.small__header .app__title__wrapper img {
+  width: 2rem;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+header.small__header .app__title__wrapper img.translate {
+  transform: rotate(-360deg);
+}
+header.small__header .burger__menu__icon__wrapper i {
+  transition: all 0.5s ease;
+  font-size: 2rem;
+  cursor: pointer;
+}
+header.small__header .burger__menu__icon__wrapper i.translate {
+  transform: translateX(1rem);
+}
+
+.mobile__nav__wrapper {
+  grid-row: 2;
+  position: absolute;
+  top: 150px;
+  padding: 2rem 2rem 1rem 2rem;
+  transition: all 0.5s ease;
+  margin-left: -100%;
+  z-index: 100;
+  border-radius: 0 0 5px 0;
+  background-color: #e5f5e5;
+}
+.mobile__nav__wrapper .fa-xmark {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.mobile__nav__wrapper ul {
+  list-style: none;
+}
+.mobile__nav__wrapper ul li {
+  padding: 1rem;
+}
+.mobile__nav__wrapper ul li a {
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.mobile__nav__wrapper ul li a img {
+  width: 2rem;
+}
+.mobile__nav__wrapper ul li a i {
+  font-size: 1.7rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile__nav__wrapper ul li a i.fa-plus {
+  font-size: 1rem;
+  position: absolute;
+  bottom: -0.8rem;
+  left: 1.2rem;
+}
+.mobile__nav__wrapper.active {
+  margin-left: 0;
+}
+
+main {
+  grid-row: 2/3;
+  padding: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+}
+main.dark {
+  filter: brightness(70%);
+}
+main .previous__page__link i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/*home*/
+.home__page__wrapper {
+  text-align: center;
+  margin: 2rem 0;
+}
+.home__page__wrapper h1, .home__page__wrapper h2 {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+.home__page__wrapper h1 span, .home__page__wrapper h2 span {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.7rem;
+}
+.home__page__wrapper p {
+  margin: 1rem;
+}
+.home__page__wrapper p span {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.3rem;
+}
+.home__page__wrapper img {
+  width: 100%;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+/*login*/
+.login__wrapper h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+.forgoten__password__link__wrapper {
+  margin: 2rem;
+  text-align: center;
+}
+.forgoten__password__link__wrapper a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.signin__link__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 4rem 0;
+}
+.signin__link__wrapper p {
+  margin: 1rem 0;
+}
+.signin__link__wrapper a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  display: block;
+}
+.signin__link__wrapper a:focus {
+  outline: 1px solid #000;
+}
+
+/*new password*/
+.new__password__page__wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.new__password__page__wrapper h1 {
+  margin: 2rem 0;
+}
+.new__password__page__wrapper p {
+  margin: 2rem 0;
+}
+
+/*sent new password*/
+.sentNewPassword__wrapper {
+  text-align: center;
+  margin: 4rem 0;
+}
+.sentNewPassword__wrapper h1 {
+  margin: 2rem 0;
+}
+.sentNewPassword__wrapper i {
+  font-size: 4rem;
+  color: #cfe3cf;
+}
+
+/*signin*/
+.signin__wrapper {
+  margin-bottom: 4rem;
+}
+.signin__wrapper h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+/*create exercise*/
+.create__exercise__page__wrapper {
+  margin: 2rem 0;
+  text-align: center;
+}
+.create__exercise__page__wrapper .header {
+  margin: 4rem 0;
+}
+.create__exercise__page__wrapper .header p {
+  margin: 1rem 0;
+}
+.create__exercise__page__wrapper .exercises__link__wrapper {
+  margin: 4rem 0;
+}
+.create__exercise__page__wrapper .exercises__link__wrapper a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.create__exercise__page__wrapper .exercises__link__wrapper a:focus {
+  outline: 1px solid #000;
+}
+
+/*accompt*/
+.accompt__page__wrapper {
+  background-image: url("../medias/images/arnold4.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+.accompt__page__wrapper h1 {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.accompt__page__wrapper .update__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+}
+.accompt__page__wrapper .update__wrapper div p {
+  margin: 2rem 0 1rem 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.accompt__page__wrapper .update__wrapper div a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.accompt__page__wrapper .update__wrapper div a:focus {
+  outline: 1px solid #000;
+}
+.accompt__page__wrapper .update__wrapper .update__email__form, .accompt__page__wrapper .update__wrapper .update__password__form {
+  width: 100%;
+  align-items: end;
+  display: none;
+}
+.accompt__page__wrapper .update__wrapper .update__email__form.active, .accompt__page__wrapper .update__wrapper .update__password__form.active {
+  display: flex;
+}
+.accompt__page__wrapper .update__wrapper .update__email__form button, .accompt__page__wrapper .update__wrapper .update__password__form button {
+  width: 8rem;
+}
+.accompt__page__wrapper .delete__accompt__wrapper {
+  margin: 4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.accompt__page__wrapper .delete__accompt__wrapper div a {
+  background-color: #a6515b;
+  min-width: auto;
+  display: flex;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.accompt__page__wrapper .delete__accompt__wrapper div a:focus {
+  outline: 1px solid #000;
+}
+
+/*exercises*/
+.exercises__page__wrapper {
+  color: #000;
+}
+.exercises__page__wrapper h1 {
+  text-align: center;
+  margin: 2rem 0;
+  color: #fff;
+}
+.exercises__page__wrapper p {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+}
+.exercises__page__wrapper .search__wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+.exercises__page__wrapper .search__wrapper .search__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7rem;
+}
+.exercises__page__wrapper .search__wrapper .exit__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+}
+.exercises__page__wrapper .search__wrapper .exit__icon.active {
+  display: block;
+}
+.exercises__page__wrapper .search__wrapper input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+  padding-left: 2.2rem;
+  padding-right: 2.3rem;
+}
+.exercises__page__wrapper .search__wrapper input:focus {
+  outline: 1px solid #000;
+}
+.exercises__page__wrapper .search__wrapper .refresh__button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: auto;
+  cursor: pointer;
+}
+.exercises__page__wrapper .search__wrapper .refresh__button:focus {
+  outline: 1px solid #000;
+}
+.exercises__page__wrapper .exercises__list__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 2rem 0;
+}
+.exercises__page__wrapper .exercises__list__wrapper .no__result {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  color: #c14f4f;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper {
+  color: #000;
+  margin: 1rem 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  height: auto;
+  padding: 1rem;
+  background-color: #f1fdf1;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .trash__button, .exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__button {
+  position: absolute;
+  right: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .trash__link .trash__button {
+  bottom: 1rem;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .trash__link.active {
+  display: none;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__button {
+  top: 1rem;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper h2 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper p {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  color: #000;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__exercise__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__exercise__wrapper input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__exercise__wrapper input:focus {
+  outline: 1px solid #000;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__exercise__wrapper button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: auto;
+}
+.exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper .update__exercise__wrapper button:focus {
+  outline: 1px solid #000;
+}
+.exercises__page__wrapper .pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.exercises__page__wrapper .pagination a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #cfe3cf;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 1.5rem;
+  font-size: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.exercises__page__wrapper .pagination a:focus {
+  outline: 1px solid #000;
+}
+.exercises__page__wrapper .pagination a.active {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #cfe3cf;
+}
+
+/*planning*/
+.planning__page__wrapper .header__wrapper {
+  text-align: center;
+  margin: 3rem 0;
+}
+.planning__page__wrapper .header__wrapper p {
+  margin: 2rem 0 0 0;
+}
+.planning__page__wrapper .day__item__wrapper {
+  margin: 2rem 0;
+  background-color: #f1fdf1;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #000;
+}
+.planning__page__wrapper .day__item__wrapper .header {
+  display: flex;
+  flex-direction: column;
+}
+.planning__page__wrapper .day__item__wrapper .header h2 {
+  font-size: 1.2rem;
+}
+.planning__page__wrapper .day__item__wrapper .header .add__link__wrapper {
+  margin: 1rem 0;
+}
+.planning__page__wrapper .day__item__wrapper .header .add__link__wrapper a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+.planning__page__wrapper .day__item__wrapper .header .add__link__wrapper a i {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+.planning__page__wrapper .day__item__wrapper .header .add__link__wrapper a i:focus {
+  outline: 1px solid #000;
+}
+.planning__page__wrapper .day__item__wrapper .exercises__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.planning__page__wrapper .day__item__wrapper .exercises__wrapper .exercise__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+}
+.planning__page__wrapper .day__item__wrapper .exercises__wrapper .exercise__wrapper h3 {
+  font-size: 0.8rem;
+}
+.planning__page__wrapper .day__item__wrapper .exercises__wrapper .exercise__wrapper a i {
+  margin: 0 0.5rem;
+}
+
+/*add planning*/
+.add__planning__page__wrapper {
+  color: #000;
+}
+.add__planning__page__wrapper .previous__page__link {
+  font-size: 2rem;
+}
+.add__planning__page__wrapper .header__wrapper {
+  margin: 2rem 0;
+  text-align: center;
+  color: #fff;
+}
+.add__planning__page__wrapper .search__wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+.add__planning__page__wrapper .search__wrapper .search__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7rem;
+}
+.add__planning__page__wrapper .search__wrapper .exit__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+}
+.add__planning__page__wrapper .search__wrapper .exit__icon.active {
+  display: block;
+}
+.add__planning__page__wrapper .search__wrapper input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+  padding-left: 2.2rem;
+}
+.add__planning__page__wrapper .search__wrapper input:focus {
+  outline: 1px solid #000;
+}
+.add__planning__page__wrapper .search__wrapper .refresh__button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: auto;
+  cursor: pointer;
+}
+.add__planning__page__wrapper .search__wrapper .refresh__button:focus {
+  outline: 1px solid #000;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .no__result {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  color: #c14f4f;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f1fdf1;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  position: relative;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 1rem;
+  margin: 1rem 0 0 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper button:focus {
+  outline: 1px solid #000;
+}
+.add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper .fa-check {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfe3cf;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.add__planning__page__wrapper .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.add__planning__page__wrapper .pagination a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #cfe3cf;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 1.5rem;
+  font-size: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.add__planning__page__wrapper .pagination a:focus {
+  outline: 1px solid #000;
+}
+.add__planning__page__wrapper .pagination a.active {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #cfe3cf;
+}
+
+/*forms*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin: auto;
+}
+form input, form select {
+  border: 1px solid #000;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+form input:focus, form select:focus {
+  outline: 1px solid #000;
+}
+form .double__input__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+form .double__input__wrapper .input__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.2rem;
+}
+form .double__input__wrapper .input__wrapper input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+form .double__input__wrapper .input__wrapper .password__input__wrapper {
+  width: 100%;
+  position: relative;
+}
+form .double__input__wrapper .input__wrapper .password__input__wrapper input {
+  width: 100%;
+  padding-right: 3rem;
+}
+form .double__input__wrapper .input__wrapper .password__input__wrapper i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  color: #000;
+}
+form .success__info__bulle {
+  text-align: left;
+  width: 100%;
+  background-color: #bbe7bb;
+  color: #286d28;
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: relative;
+  display: none;
+}
+form .success__info__bulle.active {
+  display: block;
+}
+form .error__info__bulle {
+  text-align: left;
+  display: none;
+  width: 100%;
+  background-color: #f7d5c8;
+  color: #d36751;
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: relative;
+}
+form .error__info__bulle.active {
+  display: block;
+}
+form button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #cfe3cf;
+  font-size: 1.3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+form button:focus {
+  outline: 1px solid #000;
+}
+
+/*contact*/
+.contact__page__wrapper {
+  margin: 2rem 0;
+  text-align: center;
+}
+.contact__page__wrapper .header {
+  margin-bottom: 2rem;
+}
+.contact__page__wrapper .header h1 {
+  margin: 1rem 0;
+}
+.contact__page__wrapper textarea {
+  width: 100%;
+  height: 15rem;
+  border-radius: 5px;
+}
+.contact__page__wrapper textarea:focus {
+  outline: 1px solid #000;
+}
+
+.sentMessage__page__wrapper {
+  margin: 4rem 0;
+  text-align: center;
+}
+.sentMessage__page__wrapper h1 {
+  margin: 1rem 0;
+}
+.sentMessage__page__wrapper i {
+  font-size: 4rem;
+  color: #cfe3cf;
+}
+
+footer {
+  grid-row: 3;
+  background: #f1fdf1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  transition: all 0.5s ease;
+}
+footer.dark {
+  filter: brightness(70%);
+}
+footer a {
+  font-variant: small-caps;
+}
+
+.legal__page__wrapper .top {
+  margin: 2rem 0;
+}
+.legal__page__wrapper .top h1 {
+  margin: 1rem 0;
+}
+.legal__page__wrapper .top span {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+}
+.legal__page__wrapper h2 {
+  margin: 1rem 0;
+}
+.legal__page__wrapper p {
+  margin: 1rem 0;
+}
+.legal__page__wrapper ul {
+  margin-left: 2rem;
+}
+.legal__page__wrapper ul li {
+  margin: 1rem 0;
+}
+.legal__page__wrapper .bottom {
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  /*forms*/
+  form {
+    width: 65%;
+  }
+  /*search*/
+  .add__planning__page__wrapper .search__wrapper, .exercises__page__wrapper .search__wrapper {
+    width: 25rem;
+    margin: auto;
+  }
+  /*exercises*/
+  .exercises__page__wrapper .exercises__list__wrapper {
+    position: relative;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-auto-rows: auto;
+  }
+  .exercises__page__wrapper .exercises__list__wrapper .no__result {
+    text-align: center;
+  }
+  .exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper {
+    margin: 0;
+    gap: 0;
+  }
+  .exercises__page__wrapper .exercises__list__wrapper .exercise__wrapper.on__update {
+    width: 50%;
+    position: absolute;
+    z-index: 10;
+    top: 30%;
+    left: 25%;
+    transform: translateY(-50%);
+    filter: brightness(100%);
+  }
+  /*add planning*/
+  .add__planning__page__wrapper .add__planning__exercises__wrapper {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-auto-rows: auto;
+  }
+  .add__planning__page__wrapper .add__planning__exercises__wrapper .no__result {
+    text-align: center;
+  }
+  .add__planning__page__wrapper .add__planning__exercises__wrapper .exercise__wrapper {
+    margin: 0;
+    gap: 0;
+  }
+  /*accompt*/
+  .accompt__page__wrapper {
+    width: 75%;
+  }
+  .accompt__page__wrapper .update__wrapper {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header.small__header {
+    display: none;
+  }
+  header.big__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    z-index: 2000;
+  }
+  header.big__header .app__title__wrapper {
+    position: relative;
+    margin-right: 4rem;
+  }
+  header.big__header .app__title__wrapper h1 {
+    font-family: "Permanent Marker", cursive;
+    margin-left: 3rem;
+    transition: all 0.5s ease;
+  }
+  header.big__header .app__title__wrapper h1.translate {
+    transform: translateX(0.3rem);
+  }
+  header.big__header .app__title__wrapper h2 {
+    font-size: 1rem;
+  }
+  header.big__header .app__title__wrapper img {
+    width: 2rem;
+    position: absolute;
+    transition: all 0.5s ease;
+  }
+  header.big__header .app__title__wrapper img.translate {
+    transform: rotate(-360deg);
+  }
+  header.big__header nav {
+    flex: 1;
+  }
+  header.big__header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+  }
+  header.big__header nav ul li a {
+    font-variant: small-caps;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    position: relative;
+  }
+  header.big__header nav ul li a img {
+    width: 2rem;
+    height: 2rem;
+  }
+  header.big__header nav ul li a i {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header.big__header nav ul li a i.fa-plus {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 1.3rem;
+    right: 1.5rem;
+  }
+  /*home*/
+  .home__page__wrapper .content__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  .home__page__wrapper .content__wrapper img {
+    min-width: 40%;
+    max-width: 40%;
+  }
+  .home__page__wrapper .content__wrapper:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  /*log*/
+  .login__wrapper form, .new__password__page__wrapper form, .signin__wrapper form {
+    width: 50%;
+  }
+  .login__wrapper form .double__input__wrapper, .new__password__page__wrapper form .double__input__wrapper, .signin__wrapper form .double__input__wrapper {
+    flex-direction: column;
+  }
+  /*forms*/
+  form .double__input__wrapper {
+    flex-direction: row;
+  }
+  /*exercises*/
+  .exercises__page__wrapper .exercises__list__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /*add planning*/
+  .add__planning__page__wrapper .add__planning__exercises__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /*contact*/
+  .contact__page__wrapper .double__input__wrapper {
+    flex-direction: column;
+  }
+  .accompt__page__wrapper {
+    background-position: top;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 120%;
+  }
+}/*# sourceMappingURL=style.css.map */
